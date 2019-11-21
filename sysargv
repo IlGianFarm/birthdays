@@ -1,0 +1,5 @@
+import sys
+#sys.argv[0] is the name of the script 
+#sys.argv[1:] is get everything after the script name 
+#len(sys.argv) is the number of arguments 
+#str(sys.argv) is the arguments are

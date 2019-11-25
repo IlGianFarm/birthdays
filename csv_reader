@@ -1,0 +1,5 @@
+import csv
+with open("Birthdays.csv") as csv_file:
+    csv_reader = csv.reader(csv_file , delimiter=";")
+    for row in csv_reader:
+	    print("{} Birthday is on the {}".format(row[0] , row[1]))

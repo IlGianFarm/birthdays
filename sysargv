@@ -1,5 +1,19 @@
 import sys
+
+
 #sys.argv[0] is the name of the script 
 #sys.argv[1:] is get everything after the script name 
 #len(sys.argv) is the number of arguments 
-#str(sys.argv) is the arguments are
+#str(sys.argv) is the arguments are 
+
+
+if len(sysargv)>1:
+    name=sysargv[1] 
+	date=sysargv[2] 
+else:
+    print("give me an argument to print")
+    exit()
+
+print("the name of this program is {}".format(sysargv[0]))
+print("the name you provided was {}".format(name))
+print("the date you provided was {}".format(date))

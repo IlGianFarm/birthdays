@@ -1,12 +1,12 @@
-from package import csv_reader_test
-from package import argname_test
+from Python_Package import csv_reader
+from Python_Package import argsmain
 
-arguments = argname_test.arguments()
+argsmain = argsmain.argsmain()
 
 
 def attempt1(name1):
     count = 0
-    for key, val in csv_reader_test.dataset.items():
+    for key, val in csv_reader.dataset.items():
         if key != name1:
             continue
         elif key == name1:
@@ -19,7 +19,7 @@ def attempt1(name1):
 
 def attempt2(name2):
     count = 0
-    for key, val in csv_reader_test.dataset.items():
+    for key, val in csv_reader.dataset.items():
         if key != name2:
             continue
         elif key == name2:
@@ -31,8 +31,9 @@ def attempt2(name2):
 
 
 if __name__ == "__main__":
-    arguments
-    name1 = "{}".format(arguments.names[0][0])
-    name2 = "{}".format(arguments.names[0][1])
-    attempt1()
-    attempt2()
+    argsmain()
+    argsmain = argsmain.argsmain()
+    name1 = "{}".format(argsmain.names[0][0])
+    name2 = "{}".format(argsmain.names[0][1])
+    attempt1(name1)
+    attempt2(name2)

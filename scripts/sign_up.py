@@ -8,6 +8,9 @@ cursor = None
 
 
 def open_and_create():
+    # Opens a database.
+    # If the database already exists, it selects all data from table user.
+    # If it does not already exist, it creates table user with 3 columns.
     global conn
     global cursor
 
@@ -25,6 +28,7 @@ def open_and_create():
 
 
 def signup_args():
+    # Saves username and password to be used in the 'save_new_user' function.
     parser = argparse.ArgumentParser()
     parser.add_argument('user',
                         help="Please insert your username (requires pwd).")
@@ -35,6 +39,8 @@ def signup_args():
 
 
 def save_new_user(username, password):
+    # Saves username, random salt and hashed password of a new user.
+    # If the username and password are already saved it asks for new ones.
     global conn
     global cursor
 

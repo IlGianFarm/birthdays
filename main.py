@@ -1,19 +1,24 @@
 #! /usr/bin/env python3
 
-import argparse
-import csv_reader.py
+import sys
+from scripts import log_in
+from Python_Package import argsmain
+from Python_Package import csv_reader
+from Python_Package import birthdays
 
-def parse_arguments():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("name", required = True,
-                         help = "whose birthday would you like to know",
-                         choices=names)
-    parser.add_argument("date", 
-                        help = "provide a date to check if it is anyone\'s  birthday")
-    args = parser.parse_args()
-    return args
-    
-if __name__ == "__main__":
-    args = parse_arguments()
-    print('user has requested "{}"\'s birthday'.format(args.name, args.date))
+argsmain.argsmain()
+argsmain = argsmain.argsmain()
 
+log_in.open_and_create()
+
+username = '{}'.format(argsmain.credentials[0][0])
+password = '{}'.format(argsmain.credentials[0][1])
+
+if log_in.check_user(username, password):
+    csv_reader.dictcreater()
+
+    name1 = "{}".format(argsmain.names[0][0])
+    name2 = "{}".format(argsmain.names[0][1])
+
+    birthdays.attempt1(name1)
+    birthdays.attempt2(name2)

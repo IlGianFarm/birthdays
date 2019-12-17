@@ -1,16 +1,16 @@
-## Implementation of a Birthday reminder
+This package contains:
 
+[1] "Birthdays.csv" which contains the names of 5 famous individuals as well
+ as well as their respective birthdays.
 
-In this repository you can find a file named ```birthday.py``` that contains a small list of birthdays of famous people and a function ```return_birthday()``` that returns the birthday of a person. This function is used in the ```main.py``` file to test if "Albert Einstein" and "Alan Turing" are in the list. If you run the program, executing the main file with: ```python main.py``` it will give you the following result:
+[2] "argsmain.py" utilizes argparse to acquire user inputted credentials
+ (username and password) to be used in the log-in process to check whether
+ an individual has registered to the user database and is allowed to proceed
+ "with main.py" and 2 names (names and surnames) of 2 individuals who the user
+ is interested in knowing the birthdays of.
 
-```
-$ python main.py
-Albert Einstein's birthday is 03/14/1879.
-Sadly, we don't have Alan Turing's birthday.
-```
-Drago
+[3] "birthdays.py" collects the 2 names provided by the user in "argsmain.py"
+ and attempts to return their birthdays.
 
-## Credits:
-
-Code is taken from the nice [practice Python](https://www.practicepython.org/) website from Michele Pratusevich and is released with a [CC-BY](https://www.practicepython.org/about/) license.
-ti ho portato un pacco happy birthday
+[4] "csv_reader.py" reads the contents of "Birthdays.csv" and adds them to a
+ dictionary, pairing each individual's name with their birthday.

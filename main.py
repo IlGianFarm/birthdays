@@ -2,9 +2,9 @@
 
 import sys
 from scripts import log_in
-from Python_Package import argsmain
-from Python_Package import csv_reader
-from Python_Package import birthdays
+from python_package import argsmain
+from python_package import csv_reader
+from python_package import birthdays
 
 argsmain.argsmain()  # Runs argsmain's argsmain() function.
 argsmain = argsmain.argsmain()

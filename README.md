@@ -1,16 +1,30 @@
-## Implementation of a Birthday reminder
+Hello and welcome to ROROPD's Birthday Repository.
 
 
-In this repository you can find a file named ```birthday.py``` that contains a small list of birthdays of famous people and a function ```return_birthday()``` that returns the birthday of a person. This function is used in the ```main.py``` file to test if "Albert Einstein" and "Alan Turing" are in the list. If you run the program, executing the main file with: ```python main.py``` it will give you the following result:
+[1] Tests can be found in the "tests" folder.
+Please navigate to it and run the "test_main.py" file.
+We recommend running the code using this command:
 
-```
-$ python main.py
-Albert Einstein's birthday is 03/14/1879.
-Sadly, we don't have Alan Turing's birthday.
-```
-Drago
+$python test_main.py
 
-## Credits:
+This is because when running it with coverage3 some of the code would repeat
+itself 3 times, ruining the test outputs.
 
-Code is taken from the nice [practice Python](https://www.practicepython.org/) website from Michele Pratusevich and is released with a [CC-BY](https://www.practicepython.org/about/) license.
-ti ho portato un pacco happy birthday
+
+[2] We ask that you sign-up to our user database.
+Please navigate to the folder "scripts" and run "sign_up.py".
+When running it make sure to remember to insert your USERNAME and PASSWORD.
+
+E.g.
+$python sign_up.py your_username_here your_password_here
+
+
+[3] After having succesfully signed-up you may now run "main.py".
+Navigate back out of the scripts folder and run "main.py".
+When running it make sure to remember to insert your sign-up credentials
+ (USERNAME and PASSWORD) as well as the names of two individuals who you would
+ like to know the birthday of (NAME AND SURNAME of each).
+
+E.g.
+$python main.py -credentials your_username_here your_password_here -names
+ "name surname" "name surname"

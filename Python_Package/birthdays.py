@@ -5,6 +5,9 @@ argsmain = argsmain.argsmain()
 
 
 def attempt1(name1):
+    # Checks whether namel's birthday is saved in the dictionary 'dataset'.
+    # If it is, it returns name1's birthday.
+    # Otherwise it prints that it doesn't know it.
     count = 0
     for key, val in csv_reader.dataset.items():
         if key != name1:
@@ -18,6 +21,9 @@ def attempt1(name1):
 
 
 def attempt2(name2):
+    # Checks whether name2's birthday is saved in the dictionary 'dataset'.
+    # If it is, it returns name2's birthday.
+    # Otherwise it prints that it doesn't know it.
     count = 0
     for key, val in csv_reader.dataset.items():
         if key != name2:

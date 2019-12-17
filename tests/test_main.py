@@ -7,10 +7,10 @@ import hashlib
 import csv
 
 sys.path.append('../')
-sys.path.append('../python_package')
+sys.path.append('../Python_Package')
 sys.path.append('../scripts')
 
-from python_package import csv_reader
+from Python_Package import csv_reader
 
 conn = sqlite3.connect("../scripts/user_database.db")
 cursor = conn.cursor()
@@ -36,7 +36,7 @@ dates = []
 
 def csv_reader_for_tests():
     # Reads "Birthdays.csv" and stores data in dictionary 'dataset'.
-    with open("../python_package/Birthdays.csv") as csv_file:
+    with open("../Python_Package/Birthdays.csv") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         # Fill datalist with contents of 'Birthdays.csv'.
         for row in csv_reader:
@@ -61,7 +61,7 @@ test_dict = {}
 
 def dictcreater_for_tests():
     # Reads "Birthdays.csv" and stores data in dictionary 'dataset'.
-    with open("../python_package/Birthdays.csv") as csv_file:
+    with open("../Python_Package/Birthdays.csv") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         for row in csv_reader:
             test_dict[row[0]] = row[1]

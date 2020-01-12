@@ -2,9 +2,9 @@
 
 import sys
 from scripts import log_in
-from Python_Package import argsmain
-from Python_Package import csv_reader
-from Python_Package import birthdays
+from pypackage import argsmain
+from pypackage import csv_reader
+from pypackage import birthdays
 
 argsmain.argsmain()  # Runs argsmain's argsmain() function.
 argsmain = argsmain.argsmain()
@@ -24,5 +24,4 @@ if log_in.check_user(username, password):  # Runs the "check_user()" function.
     name2 = "{}".format(argsmain.names[0][1])
 
     # Return birthday of both people if known.
-    birthdays.attempt1(name1)
-    birthdays.attempt2(name2)
+    birthdays.attempts(name1, name2)

@@ -7,10 +7,10 @@ import hashlib
 import csv
 
 sys.path.append('../')
-sys.path.append('../Python_Package')
+sys.path.append('../pypackage')
 sys.path.append('../scripts')
 
-from Python_Package import csv_reader
+from pypackage import csv_reader
 
 conn = sqlite3.connect("../scripts/user_database.db")
 cursor = conn.cursor()
@@ -36,7 +36,7 @@ dates = []
 
 def csv_reader_for_tests():
     # Reads "Birthdays.csv" and stores data in dictionary 'dataset'.
-    with open("../Python_Package/Birthdays.csv") as csv_file:
+    with open("../pypackage/Birthdays.csv") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         # Fill datalist with contents of 'Birthdays.csv'.
         for row in csv_reader:
@@ -61,7 +61,7 @@ test_dict = {}
 
 def dictcreater_for_tests():
     # Reads "Birthdays.csv" and stores data in dictionary 'dataset'.
-    with open("../Python_Package/Birthdays.csv") as csv_file:
+    with open("../pypackage/Birthdays.csv") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         for row in csv_reader:
             test_dict[row[0]] = row[1]
@@ -102,7 +102,7 @@ def check_user(username, password):
         return "Username and/or password are invalid, please retry"
 
 
-def attempt1(name1):
+def attempts(name1, name2):
     # Checks whether name1's birthday is saved in the dictionary 'test_dict'.
     # If it is, it returns name1's birthday.
     # Otherwise it prints that it doesn't know it.
@@ -116,19 +116,17 @@ def attempt1(name1):
     if count == 0:
         return "Sadly, we don\'t have " + name1 + "\'s birthday."
 
-
-def attempt2(name2):
     # Checks whether name2's birthday is saved in the dictionary 'test_dict'.
     # If it is it returns name2's birthday.
     # Otherwise it prints that it doesn't know it.
-    count = 0
+    counting = 0
     for key, val in test_dict.items():
         if key != name2:
             continue
         elif key == name2:
             count += 1
             return key + "\'s birthday is " + val + "."
-    if count == 0:
+    if counting == 0:
         return "Sadly, we don\'t have " + name2 + "\'s birthday."
 
 
@@ -148,19 +146,17 @@ class TestMain(unittest.TestCase):
         for i in names, dates:
             self.temp_csv.writelines(str(i))
 
-    def test_no_db(self):
+    def test_db(self):
         db = self.temp_db
 
-        self.assertFalse(db)
         self.assertTrue(db)
 
-    def test_no_csv(self):
+    def test_csv(self):
         csv = self.temp_csv
 
-        self.assertFalse(csv)
         self.assertTrue(csv)
 
-    def test_empty_db(self):
+    def test_full_db(self):
         count = 0
         self.temp_db.seek(0)
         data = self.temp_db.read()
@@ -169,9 +165,9 @@ class TestMain(unittest.TestCase):
         for i in data.split():
             count += 1
 
-        self.assertEqual(count, 0)
+        self.assertTrue(count > 0)
 
-    def test_empty_csv(self):
+    def test_full_csv(self):
         count = 0
         self.temp_csv.seek(0)
         data = self.temp_csv.read()
@@ -180,7 +176,7 @@ class TestMain(unittest.TestCase):
         for a in data.split():
             count += 1
 
-        self.assertEqual(count, 0)
+        self.assertTrue(count > 0)
 
     def test_log_in(self):
         # Correct username and password
@@ -231,8 +227,8 @@ class TestMain(unittest.TestCase):
         # Both individuals' birthdays are in the csv.
         name1 = "Albert Einstein"
         name2 = "Donald Trump"
-        result1_1 = attempt1(name1)
-        result1_2 = attempt2(name2)
+        result1_1 = attempts(name1, name2)
+        result1_2 = attempts(name2, name1)
         self.assertEqual("Albert Einstein's birthday is 03/14/1879.",
                          result1_1)
         self.assertEqual("Donald Trump's birthday is 06/14/1946.",
@@ -241,8 +237,8 @@ class TestMain(unittest.TestCase):
         # Only name1's birthday is in the csv.
         name3 = "Benjamin Franklin"
         name4 = "Valentino Rossi"
-        result2_1 = attempt1(name3)
-        result2_2 = attempt2(name4)
+        result2_1 = attempts(name3, name4)
+        result2_2 = attempts(name4, name3)
         self.assertEqual("Benjamin Franklin's birthday is 01/17/1706.",
                          result2_1)
         self.assertEqual("Sadly, we don't have Valentino Rossi's birthday.",
@@ -251,8 +247,8 @@ class TestMain(unittest.TestCase):
         # Only name2's birthday is in the csv.
         name5 = "Lewis Hamilton"
         name6 = "Ada Lovelace"
-        result3_1 = attempt1(name5)
-        result3_2 = attempt2(name6)
+        result3_1 = attempts(name5, name6)
+        result3_2 = attempts(name6, name5)
         self.assertEqual("Sadly, we don't have Lewis Hamilton's birthday.",
                          result3_1)
         self.assertEqual("Ada Lovelace's birthday is 12/10/1815.",
@@ -261,8 +257,8 @@ class TestMain(unittest.TestCase):
         # Neither individuals' birthdays are in the csv.
         name7 = "Sebastian Vettel"
         name8 = "Charles Leclerc"
-        result4_1 = attempt1(name7)
-        result4_2 = attempt2(name8)
+        result4_1 = attempts(name7, name8)
+        result4_2 = attempts(name8, name7)
         self.assertEqual("Sadly, we don't have Sebastian Vettel's birthday.",
                          result4_1)
         self.assertEqual("Sadly, we don't have Charles Leclerc's birthday.",

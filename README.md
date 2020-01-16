@@ -3,7 +3,7 @@
 Members of the group are:
 - IlGianFarm/Ubuntu = Gianluca Schiavon
 - alemusca = Alessandro Muscarà
-- Expeldior = Luca Brigo
+- LucaBrigo = Luca Brigo
 
 In this repository, you can find a file named ```main.py``` whose main purpose is to return the birthdays of two people that the user specifies.
 Currently the only birthdays known are those of:

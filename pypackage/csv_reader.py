@@ -1,10 +1,17 @@
+"""
+Reads "Birthdays.csv" and stores names and dates of birth in dictionary
+'dataset'
+"""
 import csv
 
 dataset = {}
 
 
 def dictcreater():
-    # Reads "Birthdays.csv" and stores data in dictionary 'dataset'.
+    """
+    Reads "Birthdays.csv" and stores names and dates of birth in dictionary
+    'dataset'
+    """
     with open("Birthdays.csv") as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         for row in csv_reader:

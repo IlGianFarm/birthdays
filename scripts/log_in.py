@@ -1,3 +1,6 @@
+"""
+Checks whether users' credentials are present in the user database"""
+
 import sqlite3
 import hashlib
 import argparse
@@ -8,9 +11,11 @@ cursor = None
 
 
 def open_and_create():
-    # Opens a database.
-    # If the database already exists, it selects all data from table user.
-    # If it does not already exist, it creates table user with 3 columns.    
+    """
+    Opens a database.
+    If the database already exists it selects all data from table user.
+    If it does not already exist it creates table user with 3 columns.
+    """ 
     global conn
     global cursor
 
@@ -28,7 +33,7 @@ def open_and_create():
 
 
 def login_args():
-    # Saves username and password to be used in the 'check_user' function.
+    """Saves username and password to be used in the 'check_user' function."""
     parser = argparse.ArgumentParser()
     parser.add_argument('user',
                         help="Please insert your username (requires pwd).")
@@ -39,7 +44,14 @@ def login_args():
 
 
 def check_user(username, password):
-    # Checks whether the users' credentials are registered in the database.
+    """
+    Checks whether the users' credentials are registered in the database.
+
+    :param username: the username inputted by the user to be checked for
+     presence in the user database.
+    :param password: the password inputted by the user to be checked for
+     presence in the user database.
+    """
     global conn
     global cursor
 

@@ -1,10 +1,15 @@
+"""Argsmain is the module used to store user inputs to be used in main.py."""
 import argparse
 import sys
 
 
 def argsmain():
-    # Saves credentials (username and password) to be used for the log_in.
-    # Saves names of 2 people who the user wants to know the birthdays of.
+    """
+    Argument "credentials" stores user inputted username and password to be
+    used for the log-in.
+    Argument "names" stores user inputted names and surnames of 2 people who
+    the user wants to know the birthdays of.
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument('-credentials', action='append', nargs=2,
                         metavar=('username', 'password'),

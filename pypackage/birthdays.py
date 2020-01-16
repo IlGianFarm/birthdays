@@ -1,5 +1,8 @@
-"""Checks whether birthdays are known of people that the user wishes to know
-the birthday of."""
+"""
+Checks whether birthdays are known of people that the user wishes to know
+the birthday of.
+"""
+
 from pypackage import csv_reader
 from pypackage import argsmain
 
@@ -18,7 +21,8 @@ def attempts(name1, name2):
     :param name2: Name and surname of the second individual the user wishes to
      know the birthday of.
     """
-    #Process for name1
+
+    # Process for name1
     count = 0
     for key, val in csv_reader.dataset.items():
         if key != name1:
@@ -30,13 +34,13 @@ def attempts(name1, name2):
         print("Sadly, we don\'t have", name1 +
               "\'s birthday.")
 
-    #Process for name2
+    # Process for name2
     counting = 0
     for key, val in csv_reader.dataset.items():
         if key != name2:
             continue
         elif key == name2:
-            count += 1
+            counting += 1
             print(key + "\'s birthday is", val + ".")
     if counting == 0:
         print("Sadly, we don\'t have", name2 +

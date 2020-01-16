@@ -1,5 +1,4 @@
-"""
-Checks whether users' credentials are present in the user database"""
+"""Checks whether users' credentials are present in the user database"""
 
 import sqlite3
 import hashlib
@@ -15,7 +14,7 @@ def open_and_create():
     Opens a database.
     If the database already exists it selects all data from table user.
     If it does not already exist it creates table user with 3 columns.
-    """ 
+    """
     global conn
     global cursor
 

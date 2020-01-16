@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module sign_up</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sign_up</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cgianluca%20schiavon%5C.ssh%5Cbirthdays%5Cscripts%5Csign_up.py">c:\users\gianluca schiavon\.ssh\birthdays\scripts\sign_up.py</a></font></td></tr></table>
+    <p><tt>Registers&nbsp;new&nbsp;users's&nbsp;usernames&nbsp;and&nbsp;passwords&nbsp;to&nbsp;user&nbsp;database</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="argparse.html">argparse</a><br>
+</td><td width="25%" valign=top><a href="hashlib.html">hashlib</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="sqlite3.html">sqlite3</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-open_and_create"><strong>open_and_create</strong></a>()</dt><dd><tt>Opens&nbsp;a&nbsp;database.<br>
+If&nbsp;the&nbsp;database&nbsp;already&nbsp;exists&nbsp;it&nbsp;selects&nbsp;all&nbsp;data&nbsp;from&nbsp;table&nbsp;user.<br>
+If&nbsp;it&nbsp;does&nbsp;not&nbsp;already&nbsp;exist&nbsp;it&nbsp;creates&nbsp;table&nbsp;user&nbsp;with&nbsp;3&nbsp;columns.</tt></dd></dl>
+ <dl><dt><a name="-save_new_user"><strong>save_new_user</strong></a>(username, password)</dt><dd><tt>Saves&nbsp;username,&nbsp;random&nbsp;salt&nbsp;and&nbsp;hashed&nbsp;password&nbsp;of&nbsp;a&nbsp;new&nbsp;user.<br>
+If&nbsp;the&nbsp;username&nbsp;and&nbsp;password&nbsp;are&nbsp;already&nbsp;saved&nbsp;it&nbsp;asks&nbsp;for&nbsp;new&nbsp;ones.<br>
+&nbsp;<br>
+:param&nbsp;username:&nbsp;the&nbsp;username&nbsp;inputted&nbsp;by&nbsp;the&nbsp;user&nbsp;to&nbsp;be&nbsp;stored&nbsp;in&nbsp;the<br>
+user&nbsp;database.<br>
+:param&nbsp;password:&nbsp;the&nbsp;password&nbsp;inputted&nbsp;by&nbsp;the&nbsp;user&nbsp;to&nbsp;be&nbsp;stored&nbsp;in&nbsp;the<br>
+user&nbsp;database.</tt></dd></dl>
+ <dl><dt><a name="-signup_args"><strong>signup_args</strong></a>()</dt><dd><tt>Saves&nbsp;username&nbsp;and&nbsp;password&nbsp;to&nbsp;be&nbsp;used&nbsp;in&nbsp;the&nbsp;'save_new_user'&nbsp;function.</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>conn</strong> = None<br>
+<strong>cursor</strong> = None</td></tr></table>
+</body></html>

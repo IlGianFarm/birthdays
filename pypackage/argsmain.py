@@ -1,4 +1,5 @@
 """Argsmain is the module used to store user inputs to be used in main.py."""
+
 import argparse
 import sys
 

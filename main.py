@@ -1,9 +1,11 @@
 #! /usr/bin/env python3
+
 """
 Uses arguments "-credentials" and "-names" from argsmain.py to check whether
 the user is registered to the user database and to return the birthdays of 2
 individuals that the user would like to know the birthdays of.
 """
+
 import sys
 from scripts import log_in
 from pypackage import argsmain

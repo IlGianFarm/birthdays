@@ -124,7 +124,7 @@ def attempts(name1, name2):
         if key != name2:
             continue
         elif key == name2:
-            count += 1
+            counting += 1
             return key + "\'s birthday is " + val + "."
     if counting == 0:
         return "Sadly, we don\'t have " + name2 + "\'s birthday."
@@ -267,6 +267,7 @@ class TestMain(unittest.TestCase):
     def tearDown(self):
         self.temp_db.close()
         self.temp_csv.close()
+
 
 if __name__ == "__main__":
     print('\n', "Printing lists produced to check for a correct structure...")
